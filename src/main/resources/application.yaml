@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: virtual-threads-db-test
+  datasource:
+    username: postgres
+    password: djljgfl
+    url: jdbc:postgresql://greatstep.ru:9999/threads_test
+    driverClassName: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 50
+      connection-timeout: 0
+      idle-timeout: 600000
+      max-life-time: 1800000
+  jpa:
+    show_sql: true
+    open-in-view: true
+    database: default
+    properties:
+      hibernate:
+        show_sql: false
+        enable_lazy_load_no_trans: false
+        default_schema: public
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        properties.hibernate.temp.use_jdbc_metadata_defaults: false
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        format_sql: false
+#        use_sql_comments: false
+  threads:
+    virtual:
+      enabled: false
+logging.level:
+  org.hibernate.SQL: DEBUG
+  org.hibernate.type: TRACE
+#server:
+#  jetty:
+#    max-connections: 10

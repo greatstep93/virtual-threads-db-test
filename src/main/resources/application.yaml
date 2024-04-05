@@ -8,11 +8,12 @@ spring:
     driverClassName: org.postgresql.Driver
     hikari:
       maximum-pool-size: 50
+      minimum-idle: 50
       connection-timeout: 0
       idle-timeout: 600000
       max-life-time: 1800000
   jpa:
-    show_sql: true
+    show_sql: false
     open-in-view: true
     database: default
     properties:
@@ -26,13 +27,11 @@ spring:
           lob:
             non_contextual_creation: true
         format_sql: false
-#        use_sql_comments: false
   threads:
     virtual:
       enabled: false
-logging.level:
-  org.hibernate.SQL: DEBUG
-  org.hibernate.type: TRACE
-#server:
-#  jetty:
-#    max-connections: 10
+#logging.level:
+#  org.hibernate.SQL: DEBUG
+#  org.hibernate.type: TRACE
+
+

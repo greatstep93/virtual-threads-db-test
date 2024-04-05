@@ -31,6 +31,9 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
+tasks.bootJar {
+    archiveFileName.set("virtual-threads-db-test.jar")
+}
 tasks.withType<Test> {
     useJUnitPlatform()
 }

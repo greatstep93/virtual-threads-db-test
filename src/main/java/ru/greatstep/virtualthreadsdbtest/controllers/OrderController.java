@@ -15,7 +15,7 @@ public class OrderController {
     private final OrderService orderService;
 
     @GetMapping("/getOrders")
-    public ResponseEntity<Response> getOrders(@RequestParam("code") String clientCode) throws InterruptedException {
+    public ResponseEntity<Response> getOrders(@RequestParam("code") String clientCode) {
         return ResponseEntity.ok(orderService.findOrders(clientCode));
     }
 

@@ -17,8 +17,7 @@ public class OrderService {
 
     @Transactional(propagation = Propagation.NEVER)
     public Response findOrders(String clientCode) {
-        return orderMapper.toResponse(orderRepository.findAllByClientClientCode(clientCode));
-//        return orderMapper.toResponse(orderRepository.findAllByClientClientCodeNative(clientCode));
+        return orderMapper.toResponse(orderRepository.findAllByClientClientCodeNative(clientCode));
     }
 
 }
